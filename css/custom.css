@@ -1,0 +1,103 @@
+body{
+	background-color: #FBFCFC;
+background-image: url("https://www.transparenttextures.com/patterns/shattered.png");
+font-family: 'Radley', serif;
+font-family: 'Taviraj', serif;
+padding-top: 3rem;
+}
+
+.footercustom{
+background-color: #F4F6F7;
+background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+}
+
+.row-col{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.Footer {
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: ;
+	padding: 1rem;
+	background-color: #C0C0C0;
+    text-align: bottom;
+}
+
+.circular-square{
+	border-radius: 50%;
+}
+
+.btn.btn-outline{
+	background-color: #ff5E00;
+	color: #FDFEFE;
+}
+
+.btn.btn-outline:hover{
+	background-color: #2980B9;
+}
+
+.row.text-center{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.text-heading{
+	
+	padding-top: 1rem;
+	padding-bottom: px;
+}
+
+/* Film Direction Page*/
+.img-thumbnail{
+	border-color: #2980B9;
+}
+
+.box{
+   
+    background-color: lightgrey;
+    width: 600px;
+    border: 5px solid orange;
+   
+    padding: 25px;
+    margin: 25px;
+}
+
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+.button:hover, a:hover {
+    opacity: 0.7;
+}

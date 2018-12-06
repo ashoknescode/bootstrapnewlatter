@@ -1,0 +1,156 @@
+body{
+	background-color: #E5E7E9;
+/*background-image: url("https://www.transparenttextures.com/patterns/shattered.png");*/
+font-family: 'Radley', serif;
+font-family: 'Taviraj', serif;
+padding-top: 4rem;
+}
+
+
+.breaking-news {
+  background: #2ecc71;
+  padding: 8px 12px;
+  position: relative;
+}
+.feed-entries { display: block; }
+ 
+.breaking-news a {
+  -webkit-transition: color 0.3s ease-in;
+  -moz-transition: color 0.3s ease-in;
+  -o-transition: color 0.3s ease-in;
+  transition: color 0.3s ease-in;
+}
+
+
+.breaking-news a {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px #333;
+}
+ 
+.breaking-news a:hover { text-decoration: underline; }
+
+.scroll-effect {
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+ 
+
+.scroll-effect .feed-entries {
+  overflow: hidden;
+  top: 0;
+}
+.scroll-effect .feed-entries a { display: block; }
+
+
+
+
+
+
+
+.main-heading{
+	text-align: center;
+	padding-top: 20px;
+	color: #09198A;
+	font-size: 48px;
+}
+
+.text-center{
+background-color:#E5E7E9;
+}
+
+/* Box Sections start */
+.boximage{
+	margin-top: 30rem; 
+	margin-left: 15px;
+	margin-right: auto;
+	align-items: center;
+}
+/*For horizontal line */
+.hl{
+    border: 2px solid green;
+    width: 30px;
+    color: #85929E;
+}
+
+.hl-align {
+	padding-left: 44%;
+	padding-top: 10px;
+	color: #09198A;
+}
+/* For title under the box */
+.title{
+	padding-top: 15px;
+	text-align: center;
+	padding-top: 20px;
+	color: #09198A;
+	font-size: 28px;
+}
+
+.box {
+  transition: box-shadow .1s;
+  width: 300px;
+  height: 500px;
+  margin: 60px;
+  border-radius:05px;
+  background: #fff;
+  float: left;
+  
+}
+.box:hover {
+  
+}
+/* Button under the box */
+.btn.btn-light{
+	margin-top: 5px;
+	margin-bottom: 4px;
+	margin-left: 8px;
+	margin-right: 8px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	background-color: #FBFCFC;
+	color:#09198A;
+	border-radius: 30px;
+
+}
+
+.learn{
+	text-transform: uppercase;
+	color: #09198A;
+}
+
+.Box:hover{
+	color: #FF3300;
+}
+.boxpad:hover{
+    opacity:;
+	text-align:center;
+	color:#000000;
+	font-size:20px;
+	font-weight:auto;
+	font-family:"Times New Roman", Times, serif;
+	padding:30px;
+	padding-bottom:10px;
+
+}
+
+/* Box Sections End */
+
+.fa-envelope-square{
+	color: #09198A;
+	font-size: 95px;
+
+	}
+
+.fa-folder-open{
+	color: #09198A;
+	font-size: 95px;
+
+}
+.fa-shopping-bag{
+	color: #09198A;
+	font-size: 95px;
+
+}

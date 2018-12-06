@@ -1,0 +1,78 @@
+body{
+	margin-top: 5.1rem;
+}
+
+.bottom-padding{
+	padding-bottom: 2rem;
+}
+
+.row-one{
+	background: #3973C1;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.align-middle{
+	text-align: center;
+	color: #FFFFFF;
+	
+}
+
+/* Body page image */
+.img-text{
+	position: absolute;
+    top: 80%;
+    left: 0%;
+    color: #000000;
+    text-align: center;
+}
+
+.img-text-our-value{
+	position: absolute;
+    top: 260%;
+    left: 0%;
+    color: #000000;
+    bottom: 0px;
+    padding: 0px;
+    text-align: center;
+
+}
+
+/* Member image */
+.member-name{
+	width: 100%;
+	color: #FFFFFF;
+	background-color: #1C2833;
+	bottom: 0px;
+	padding: 10px;
+	position: relative;
+	opacity: 0.6;
+	text-align: center;
+}
+
+.image-button{
+    /*background-color: #1C2833;*/
+    bottom: 0px;
+    padding: 50px;
+    position: absolute;
+    text-align: center;
+    padding-left: 50px;
+
+}
+
+
+.bodypage-image-section{
+    position: relative;
+    /*max-width: 1200px;*/
+    margin: 0 auto;
+}
+
+/*.container img {vertical-align: middle;}
+*/
+.content {
+    position: absolute;
+    bottom: 0;
+    color: #000000;
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+}

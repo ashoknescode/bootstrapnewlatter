@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Biztechnovations</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     <script src="./path/to/jquery.webticker.min.js"></script>
+
+    <!--Custom styles for this template-->
+    <link href="css/biztechnovation.css" rel="stylesheet">
+   <!--  <link href=rel="stylesheet" type="text/css" href=""> -->
+    <link href="https://fonts.googleapis.com/css?family=Radley|Taviraj:200,200i,300,300i,400,400i,500,500i,600,700,800i,900,900i" rel="stylesheet">
+ 
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+
+
+<style type="text/css">
+  html{
+    height:100%;
+    font-family: Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif;
+  }
+  body{
+    margin:0px;
+    padding:0px;
+    text-align:center;
+    height:100%;
+  }
+  #mainContainer{
+    width:760px;
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+    margin:0 auto;
+    height:100%;
+    text-align:left;
+  }
+  #topRow{
+
+  }
+  #mainContent{
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  #dhtmlgoodies_marquee{
+    /* general marquee layout*/
+    padding-top:3px;
+    height:25px;
+    background-color: #000;
+
+
+    /* End general marquee layout */
+
+
+    position:absolute;
+    left:0px;
+    z-index:1000;
+    bottom:0px;
+    display:none;
+    width:100%;
+    overflow:hidden;
+  }
+  body > div#dhtmlgoodies_marquee{   Firefox rule 
+    position:fixed;
+  }
+  #dhtmlgoodies_marquee .textObj{ /* Layout for the marquee text */
+    position:absolute;
+    color: #FFF;
+    font-weight:bold;
+    white-space:nowrap;
+    font-family: Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif;
+  }
+  /* Just some layout classes used in this example script */
+  .highlighted{
+    color:#F00; // Red color
+  }
+  .greenText{
+    color:#0F0; // Green color
+  }
+  </style>
+  <script type="text/javascript">
+  /************************************************************************************************************
+  (C) www.dhtmlgoodies.com, October 2005
+
+  This is a script from www.dhtmlgoodies.com. You will find this and a lot of other scripts at our website.
+
+  Terms of use:
+  You are free to use this script as long as the copyright message is kept intact. However, you may not
+  redistribute, sell or repost it without our permission.
+
+  Thank you!
+
+  www.dhtmlgoodies.com
+  Alf Magne Kalleland
+
+  ************************************************************************************************************/
+  var dhtmlgoodies_marqueeSteps = 3;  // Higher = Faster, Lower = slower and more smoothly
+  var dhtmlgoodies_marqueeSpeed = 15;  // Lower value = Faster
+  var dhtmlgoodies_marqueeStopOnMouseOver = false;  // Make the marquee stop moving when user moves his mouse over it
+  var dhtmlgoodies_marqueePosition = "bottom";  // "top" or "bottom"
+
+  /* Don't change anything below here */
+  var dhtmlgoodies_marqueeObj;
+  var dhtmlgoodies_marqueeTextObj;
+  var dhtmlgoodies_marqueeTmpStep;
+  var dhtmlgoodies_marqueeTextObjects = new Array();
+  var dhtmlgoodies_marqueeHiddenSpans = new Array();
+
+  var dhtmlgoodies_marqueeIndex = 0;
+  function repositionMarquee(e,timeout)
+  {
+    if(document.all)e=event;
+    if(dhtmlgoodies_marqueePosition.toLowerCase()=='top'){
+      dhtmlgoodies_marqueeObj.style.top = '0px';
+    }else{
+      dhtmlgoodies_marqueeObj.style.bottom = '-1px';
+    }
+    if(document.all && !timeout)setTimeout('repositionMarquee(false,true)',500)
+  }
+  function marqueeMove()
+  {
+    var leftPos = dhtmlgoodies_marqueeTextObj.offsetLeft;
+    leftPos = leftPos - dhtmlgoodies_marqueeTmpStep;
+    var rightEdge = leftPos + dhtmlgoodies_marqueeHiddenSpans[dhtmlgoodies_marqueeIndex].offsetLeft;
+    if(rightEdge<0){
+      leftPos = document.documentElement.offsetWidth;
+      dhtmlgoodies_marqueeTextObj.style.display='none';
+      dhtmlgoodies_marqueeIndex++;
+      if(dhtmlgoodies_marqueeIndex>=dhtmlgoodies_marqueeTextObjects.length)dhtmlgoodies_marqueeIndex = 0;
+      dhtmlgoodies_marqueeTextObj = dhtmlgoodies_marqueeTextObjects[dhtmlgoodies_marqueeIndex];
+      dhtmlgoodies_marqueeTextObj.style.display='block';
+
+    }
+    dhtmlgoodies_marqueeTextObj.style.left = leftPos + 'px';
+
+  }
+
+  function stopMarqueeMove()
+  {
+    if(dhtmlgoodies_marqueeStopOnMouseOver)dhtmlgoodies_marqueeTmpStep = 0;
+  }
+  function resumeMarqueeMove()
+  {
+    dhtmlgoodies_marqueeTmpStep = dhtmlgoodies_marqueeSteps;
+  }
+  function initMarquee()
+  {
+    dhtmlgoodies_marqueeObj = document.getElementById('dhtmlgoodies_marquee');
+
+    var spans = dhtmlgoodies_marqueeObj.getElementsByTagName('DIV');
+    for(var no=0;no<spans.length;no++){
+      if(spans[no].className=='textObj'){
+        if(!dhtmlgoodies_marqueeTextObj){
+          dhtmlgoodies_marqueeTextObj = spans[no];
+          spans[no].style.display='block';
+        }else spans[no].style.display='none';
+        dhtmlgoodies_marqueeTextObjects.push(spans[no]);
+        var hiddenSpan = document.createElement('SPAN');
+        hiddenSpan.innerHTML = ' '
+        spans[no].appendChild(hiddenSpan);
+        dhtmlgoodies_marqueeHiddenSpans.push(hiddenSpan);
+
+      }
+    }
+
+    var oldIE = isOldIe();
+
+    if(dhtmlgoodies_marqueePosition.toLowerCase()=='top'){
+      dhtmlgoodies_marqueeObj.style.top = '0px';
+    }else{
+      if(oldIE){
+        dhtmlgoodies_marqueeObj.style.bottom = '0px';
+      }else{
+        dhtmlgoodies_marqueeObj.style.bottom = '-1px';
+      }
+    }
+
+
+
+
+    dhtmlgoodies_marqueeObj.style.display='block';
+    dhtmlgoodies_marqueeTextObj.style.left = document.documentElement.offsetWidth + 'px';
+    dhtmlgoodies_marqueeObj.onmouseover = stopMarqueeMove;
+    dhtmlgoodies_marqueeObj.onmouseout = resumeMarqueeMove;
+    if(oldIE)window.onscroll = repositionMarquee; else dhtmlgoodies_marqueeObj.style.position = 'fixed';
+
+    dhtmlgoodies_marqueeObj.style.display='block';
+    dhtmlgoodies_marqueeTmpStep = dhtmlgoodies_marqueeSteps;
+
+    setInterval('marqueeMove()',dhtmlgoodies_marqueeSpeed);
+  }
+
+  function isOldIe() {
+    var isMsie = navigator.userAgent.indexOf('MSIE') >=0;
+    if(isMsie) {
+      string = '';
+      for(var prop in navigator) {
+        string = string + prop + ':' + navigator[prop] + '\n';
+
+      }
+      var version = navigator.userAgent;
+      for(var i=4;i<=7;i++) {
+        if(version.indexOf('MSIE ' + i) >=0){
+          return true;
+        }
+      }
+      return false;
+    }else{
+      return false;
+    }
+
+  }
+
+  </script>
+
+
+
+
+
+
+</head>
+
+<body>
+<!--Start Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <h2 class="navbar-brand brand-name">
+        <a href=""><img class="img-responsive" src="">BIZTECHNOVATION</a>
+          </h2>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" src="">About <span class="sr-only">(current)</span></a>
+      </li>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link enable" href="#" src="">Contact us</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link enable" href="#">Blog</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link enable" href="#">Sign in</a>
+      </li>
+    </ul>
+</div>
+</nav>
+
+<!--Head Section-->
+
+<!-- Start of marquee HTML code -->
+<div id="dhtmlgoodies_marquee">
+  <div class="textObj"><span class="highlighted">Breaking news!</span> Alten Calsoft Labs, the next-generation high end product design company has acquired Si2chip. Read an announcement. | info@si2chip.com | +91 8867738244 </div>
+  <!-- <div class="textObj"><span class="highlighted">STOCK NEWS:</span> Company 1 <span class="greenText">82.5</span>(+0.5), Company 2 <span class="greenText">42.9</span>(-2.4), Company 3 <span class="greenText">189.9</span>(-13.7)</div>
+  <div class="textObj"><span class="highlighted">Sport:</span> The soccer season is almost over in Norway now. We have a few thrilling matches ahead of us.</div>
+  <div class="textObj"><span class="highlighted">Other news:</span> The quick brown fox jumps over a lazy dog.</div> -->
+</div>
+<!-- END OF MARQUEE HTML CODE -->
+<script type="text/javascript">
+initMarquee();  // Initialize marquee script
+</script>
+
+
+
+
+
+
+<div class="container">
+
+
+	<div class="col-md-8 offset-4">
+		<h1><strong class="main-heading">Choose your style</strong></h1>
+		</div>
+	
+	<div class="row text-center">  <!--Column start-->
+		<div class="col-md-4">
+         <div class="box">
+         	<div class="boxpad"><!--Hover mouse-->
+         	<!-- <img src="img/acoidea.png" alt="Mailer Box"> -->
+         	<i class="fas fa-envelope-square"></i>
+         	<div class="hl-align">      <!--For Horizontal line in center -->
+         		<div class="hl"></div>
+         	</div>
+         	
+         	<h4 class="title"><b>Mailer Box</b></h4>
+         	<ul class="list-unstyled">
+                <li><a href="#" class="learn">learn more<i class="fal fa-angle-right"></i></a></li><br>
+
+                <li><a href="#" class="btn btn-light">meet our mailer</a></li>
+              
+              </ul>
+              </div>
+         </div>
+			
+		</div>
+		
+		<div class="col-md-4">
+         <div class="box">
+         	<div class="boxpad">
+         	<i class="fas fa-folder-open"></i>  
+         	<!-- <img src="img/biztechnovation-piramidshape" alt="Folding Carton"> -->
+         	<div class="hl-align">      
+         		<div class="hl"></div>
+         	</div>
+         	<h4 class="title"><b>Folding Carton</b></h4>
+         	<ul class="list-unstyled">
+                <li><a href="#" class="learn">learn more</a></li><br>
+                <li><a href="#" class="btn btn-light">meet our carton</a></li>
+              
+              </ul>
+          </div>
+         </div>
+			
+		</div>
+
+		<div class="col-md-4">
+         <div class="box">
+         	<div class="boxpad">
+         		<i class="fas fa-shopping-bag"></i>
+         	<!-- <img src="img/acoidea.png" alt="Shipping Box"> -->
+         	<div class="hl-align">      
+         		<div class="hl"></div>
+         	</div>
+         	<h4 class="title"><b>Shipping Box</b></h4>
+         	<ul class="list-unstyled">
+                <li><a href="#" class="learn">learn more</a></li><br>
+                <li><a href="#" class="btn btn-light">meet our shipper</a></li>
+              
+              </ul>
+          </div>
+         </div>
+			
+		</div>
+		</div>  <!--End Column-->
+      <div class="row">
+     <div class="col-md-6">
+     	<img src="img/biztechnovation-office.jpg" alt="office" width="530" height="400">
+     	</div>
+     
+     <div class="col-md-6 text-center">
+    	<h3 class="">Office</h3>
+     	<p class="lead">The main purpose of an office environment is to support its occupants in performing their job—preferably at minimum cost and to maximum satisfaction. With different people performing different tasks and activities, however, it is not always easy to select the right office spaces. To aid decision-making in workplace and office design, one can distinguish three different types of office spaces: work spaces, meeting spaces and support spaces. For new, or developing businesses, remote satellite offices and project rooms, Serviced Offices can provide a simple solution and provide all of the former types of space.</p>
+     	
+    	</div>
+    </div>
+</div>
+</div> <!--End Container-->
+
+
+<!--End Head Section-->
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/jquery.breakingNews.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</body>
+</html>
